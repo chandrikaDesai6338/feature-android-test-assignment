@@ -11,13 +11,15 @@ val White = Color(0xFFFFFFFF)
 val Teal = Color(0xFF2CABB1)
 val GrayBorder = Color(0xFFDDDDDD)
 val GrayText = Color(0xFF6D6D6D)
+val WhiteFade = Color(0xFFDDDFFF)
 
 class CustomColors(
     black: Color,
     white: Color,
     teal: Color,
     grayBorder: Color,
-    grayText: Color
+    grayText: Color,
+    bg: Color
 ) {
     var black by mutableStateOf(black)
         private set
@@ -34,18 +36,23 @@ class CustomColors(
     var grayText by mutableStateOf(grayText)
         private set
 
+    var bg by mutableStateOf(grayText)
+        private set
+
     fun copy(
         black: Color = this.black,
         white: Color = this.white,
         teal: Color = this.teal,
         grayBorder: Color = this.grayBorder,
         grayText: Color = this.grayText,
+        bg: Color = this.bg,
     ): CustomColors = CustomColors(
         black = black,
         white = white,
         teal = teal,
         grayBorder = grayBorder,
         grayText = grayText,
+        bg = bg
     )
 
     fun updateColorsFrom(other: CustomColors) {
@@ -55,6 +62,7 @@ class CustomColors(
             teal = teal
             grayBorder = grayBorder
             grayText = grayText
+            bg = bg
         }
     }
 }
@@ -65,6 +73,7 @@ val LocalColors = staticCompositionLocalOf {
         white = White,
         teal = Teal,
         grayBorder = GrayBorder,
-        grayText = GrayText
+        grayText = GrayText,
+        bg = WhiteFade
     )
 }

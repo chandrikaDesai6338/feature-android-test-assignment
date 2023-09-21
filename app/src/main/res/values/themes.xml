@@ -2,4 +2,8 @@
 <resources>
 
     <style name="Theme.ShackleHotelBuddy" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="ThemeOverlay.MyApp.Dialog" parent="android:Theme.Material.Dialog">
+        <item name="android:color">@color/black</item>
+    </style>
 </resources>
